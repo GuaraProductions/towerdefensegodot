@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bosrh6h0xti34"]
+
+[ext_resource type="Script" uid="uid://41tbletbrwm0" path="res://Scripts/Inimigo/Inimigo.gd" id="1_byc21"]
+[ext_resource type="Script" uid="uid://1pjdxxvppp4e" path="res://Scripts/Inimigo/InimigoArea.gd" id="2_ri8om"]
+[ext_resource type="Texture2D" uid="uid://dhkyrjvbfo3k0" path="res://assets/PNG/TowerDefenseTiles/towerDefense_tile292.png" id="3_ri8om"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byc21"]
+size = Vector2(126, 127)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ri8om"]
+bg_color = Color(1, 0.334722, 0.342871, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyxni"]
+bg_color = Color(0, 0.713586, 0.434104, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Inimigo" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_byc21")
+velocidade = 150.0
+recompensa_dinheiro = 25
+
+[node name="Area" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 0
+script = ExtResource("2_ri8om")
+
+[node name="Sprite" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
+scale = Vector2(2, 2)
+texture = ExtResource("3_ri8om")
+
+[node name="Collision" type="CollisionShape2D" parent="Area"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_byc21")
+
+[node name="BarraDeVida" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+offset_left = -99.0
+offset_top = -114.0
+offset_right = 101.0
+offset_bottom = -87.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ri8om")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cyxni")

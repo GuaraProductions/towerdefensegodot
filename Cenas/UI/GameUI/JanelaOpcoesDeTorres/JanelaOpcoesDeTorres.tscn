@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqgdy6r8atbdx"]
+
+[ext_resource type="Script" uid="uid://dm71nvi1v54m8" path="res://Scripts/UI/GameUI/JanelaOpcoesTorres/JanelaOpcoesTorres.gd" id="1_7tlxx"]
+[ext_resource type="PackedScene" uid="uid://dgvltt2hmjry2" path="res://Cenas/UI/GameUI/JanelaOpcoesDeTorres/TorreOpcao.tscn" id="2_uvj1m"]
+
+[node name="JanelaOpcoesDeTorres" type="Window"]
+auto_translate_mode = 1
+title = "Escolha a torre para spawnar"
+position = Vector2i(0, 36)
+size = Vector2i(500, 500)
+content_scale_mode = 1
+script = ExtResource("1_7tlxx")
+torre_opcoes_cena = ExtResource("2_uvj1m")
+
+[node name="_" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="_" type="HBoxContainer" parent="_"]
+layout_mode = 2
+
+[node name="TorresGrid" type="GridContainer" parent="_/_"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="TorreInfo" type="VBoxContainer" parent="_/_"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Nome" type="Label" parent="_/_/TorreInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Textura" type="TextureRect" parent="_/_/TorreInfo"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+
+[node name="Descricao" type="Label" parent="_/_/TorreInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Propriedades" type="Label" parent="_/_/TorreInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]

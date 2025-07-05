@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://urbewd8ip8ja"]
+
+[ext_resource type="Texture2D" uid="uid://xosimxi0fjpv" path="res://assets/PNG/TowerDefenseTiles/towerDefense_tile228.png" id="1_5a6gr"]
+[ext_resource type="Script" uid="uid://dfuypjumvqy5l" path="res://Scripts/Torres/TorreMissil/TorreMissil.gd" id="1_7yd7l"]
+[ext_resource type="Texture2D" uid="uid://viauhg6ugp7" path="res://assets/PNG/Retina/towerDefense_tile226.png" id="2_sdsmw"]
+[ext_resource type="Texture2D" uid="uid://bwj1hfo8cv1it" path="res://assets/PNG/Retina/towerDefense_tile203.png" id="4_hdr0g"]
+[ext_resource type="Texture2D" uid="uid://b4wgft38mv711" path="res://assets/PNG/Retina/towerDefense_tile251.png" id="5_66dlj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7yd7l"]
+radius = 202.674
+
+[node name="TorreMissil" type="Node2D" node_paths=PackedStringArray("raycast", "barra_de_progresso_municao", "node_textura_upgrade", "area_detector_inimigos")]
+script = ExtResource("1_7yd7l")
+raycast = NodePath("RayCast2D")
+barra_de_progresso_municao = NodePath("ProgressBar")
+node_textura_upgrade = NodePath("RayCast2D/BaseDaTorre/Missel1")
+area_detector_inimigos = NodePath("DetectorInimigos")
+rotacao_velocidade = 10.0
+tempo_espera = 1.5
+municao_inicial = 55
+texturas_upgrade = Array[Texture2D]([ExtResource("2_sdsmw")])
+preco_upgrade = 35.0
+dano = 35.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(99, -1)
+
+[node name="BaseDaTorre" type="Sprite2D" parent="RayCast2D"]
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_5a6gr")
+
+[node name="Missel1" type="Sprite2D" parent="RayCast2D/BaseDaTorre"]
+position = Vector2(-0.666691, -6.66666)
+scale = Vector2(0.398458, 0.400402)
+texture = ExtResource("4_hdr0g")
+
+[node name="Missel2" type="Sprite2D" parent="RayCast2D/BaseDaTorre"]
+position = Vector2(-6.66673, -16.6666)
+scale = Vector2(0.398458, 0.400402)
+texture = ExtResource("5_66dlj")
+
+[node name="Missel3" type="Sprite2D" parent="RayCast2D/BaseDaTorre"]
+position = Vector2(3.99994, -16.6667)
+scale = Vector2(0.398458, 0.400402)
+texture = ExtResource("5_66dlj")
+
+[node name="DetectorInimigos" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape2D" parent="DetectorInimigos"]
+position = Vector2(0.333334, 0.333333)
+shape = SubResource("CircleShape2D_7yd7l")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(200, 0)
+offset_left = -100.0
+offset_top = -96.0
+offset_right = 100.0
+offset_bottom = -68.0

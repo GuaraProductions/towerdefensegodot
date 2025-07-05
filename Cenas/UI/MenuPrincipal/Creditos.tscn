@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://w7en1bqi6r3x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n68f"]
+bg_color = Color(0.137255, 0.137255, 0.137255, 0.686275)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 5.0
+
+[node name="Creditos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="-" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="-" type="VBoxContainer" parent="-"]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="-/-"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_2n68f")
+text = "Créditos"
+horizontal_alignment = 1
+
+[node name="_" type="VBoxContainer" parent="-/-"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CreditosLabel" type="Label" parent="-/-/_"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Programação:
+- Guará Programador
+
+Assets:
+- https://kenney.nl/assets/tower-defense-top-down"
+
+[node name="Voltar" type="Button" parent="-/-"]
+layout_mode = 2
+text = "Voltar"

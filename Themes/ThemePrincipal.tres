@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bjbkdsjfwbo0h"]
+
+[ext_resource type="FontFile" uid="uid://d6tubrn1txl0" path="res://assets/Font/ChangaOne-Regular.ttf" id="1_0xtbp"]
+
+[resource]
+default_font = ExtResource("1_0xtbp")
+Button/font_sizes/font_size = 32
+VBoxContainer/constants/separation = 15

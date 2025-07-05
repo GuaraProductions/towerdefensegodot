@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://bityts2d47d5y"]
+
+[ext_resource type="Script" uid="uid://bb3n0uu2la31h" path="res://Scripts/Player/MovimentoCameraController/MovimentoCameraController.gd" id="1_3tjji"]
+
+[node name="MovimentoCamera" type="CanvasLayer"]
+script = ExtResource("1_3tjji")
+
+[node name="Colunas" type="HBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Esquerda" type="VBoxContainer" parent="Colunas"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="SuperiorEsquerdo" type="Button" parent="Colunas/Esquerda"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "Superior Esquerdo"
+
+[node name="Esquerdo" type="Button" parent="Colunas/Esquerda"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "Esquerda"
+
+[node name="InferiorEsquerdo" type="Button" parent="Colunas/Esquerda"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "Inferior Esquerdo"
+
+[node name="Centro" type="VBoxContainer" parent="Colunas"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Topo" type="Button" parent="Colunas/Centro"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "Topo"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Control" type="Control" parent="Colunas/Centro"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Inferior" type="Button" parent="Colunas/Centro"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "Inferior"
+
+[node name="Direita" type="VBoxContainer" parent="Colunas"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="SuperiorDireito" type="Button" parent="Colunas/Direita"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "Superior Direito"
+
+[node name="Direito" type="Button" parent="Colunas/Direita"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "Direita"
+
+[node name="InferiorDireito" type="Button" parent="Colunas/Direita"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 16
+text = "Inferior Direito"
+
+[connection signal="mouse_entered" from="Colunas/Esquerda/SuperiorEsquerdo" to="." method="_on_superior_esquerdo_mouse_entered"]
+[connection signal="mouse_exited" from="Colunas/Esquerda/SuperiorEsquerdo" to="." method="_mouse_exited_area"]
+[connection signal="mouse_entered" from="Colunas/Esquerda/Esquerdo" to="." method="_on_esquerdo_mouse_entered"]
+[connection signal="mouse_exited" from="Colunas/Esquerda/Esquerdo" to="." method="_mouse_exited_area"]
+[connection signal="mouse_entered" from="Colunas/Esquerda/InferiorEsquerdo" to="." method="_on_inferior_esquerdo_mouse_entered"]
+[connection signal="mouse_exited" from="Colunas/Esquerda/InferiorEsquerdo" to="." method="_mouse_exited_area"]
+[connection signal="mouse_entered" from="Colunas/Centro/Topo" to="." method="_on_topo_mouse_entered"]
+[connection signal="mouse_exited" from="Colunas/Centro/Topo" to="." method="_mouse_exited_area"]
+[connection signal="mouse_entered" from="Colunas/Centro/Inferior" to="." method="_on_inferior_mouse_entered"]
+[connection signal="mouse_exited" from="Colunas/Centro/Inferior" to="." method="_mouse_exited_area"]
+[connection signal="mouse_entered" from="Colunas/Direita/SuperiorDireito" to="." method="_on_superior_direito_mouse_entered"]
+[connection signal="mouse_exited" from="Colunas/Direita/SuperiorDireito" to="." method="_mouse_exited_area"]
+[connection signal="mouse_entered" from="Colunas/Direita/Direito" to="." method="_on_direito_mouse_entered"]
+[connection signal="mouse_exited" from="Colunas/Direita/Direito" to="." method="_mouse_exited_area"]
+[connection signal="mouse_entered" from="Colunas/Direita/InferiorDireito" to="." method="_on_inferior_direito_mouse_entered"]
+[connection signal="mouse_exited" from="Colunas/Direita/InferiorDireito" to="." method="_mouse_exited_area"]

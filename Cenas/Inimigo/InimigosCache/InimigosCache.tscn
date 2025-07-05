@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://bysxif3yhx4i6"]
+
+[ext_resource type="Script" uid="uid://cn41tqs8iyc5g" path="res://Scripts/Inimigo/InimigosCache/InimigosTerrestres.gd" id="1_0te6f"]
+[ext_resource type="PackedScene" uid="uid://bosrh6h0xti34" path="res://Cenas/Inimigo/TanqueCinza.tscn" id="2_qd5si"]
+[ext_resource type="PackedScene" uid="uid://cm0f3fg2b3c12" path="res://Cenas/Inimigo/TanqueVermelho.tscn" id="3_t3djw"]
+
+[node name="InimigosCaches" type="Node"]
+script = ExtResource("1_0te6f")
+inimigos = Array[PackedScene]([ExtResource("2_qd5si"), ExtResource("3_t3djw")])

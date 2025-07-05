@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dgyo1rxqgbjg7"]
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Center"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margin/Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Tower Defense Guará"
+
+[node name="Jogar" type="Button" parent="Margin/Center/VBox"]
+layout_mode = 2
+text = "Jogar"
+
+[node name="Opcoes" type="Button" parent="Margin/Center/VBox"]
+layout_mode = 2
+text = "Opções"
+
+[node name="Creditos" type="Button" parent="Margin/Center/VBox"]
+layout_mode = 2
+text = "Creditos"
+
+[node name="Sair" type="Button" parent="Margin/Center/VBox"]
+layout_mode = 2
+text = "Sair
+"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1gtolbiywyn4"]
+
+[ext_resource type="Script" uid="uid://c7xdwtqpx7x84" path="res://Scripts/Torres/AreaSpawn/AreaSpawn.gd" id="1_xa26f"]
+[ext_resource type="Texture2D" uid="uid://xaq4e3pburnb" path="res://assets/PNG/Retina/towerDefense_tile017.png" id="2_8tia4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d20u"]
+size = Vector2(193, 160)
+
+[node name="AreaSpawn" type="Area2D"]
+script = ExtResource("1_xa26f")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5d20u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8tia4")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

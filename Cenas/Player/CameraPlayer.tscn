@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bne6j3al7l1qg"]
+
+[ext_resource type="Script" uid="uid://d3c7llm7j4p75" path="res://Scripts/Player/CameraPlayer.gd" id="1_rj1tu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj1tu"]
+size = Vector2(1116, 618)
+
+[node name="CameraPlayer" type="CharacterBody2D"]
+script = ExtResource("1_rj1tu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+position_smoothing_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -5)
+shape = SubResource("RectangleShape2D_rj1tu")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="LimiteSuperiorEsquerdo" type="Marker2D" parent="Node"]
+unique_name_in_owner = true
+
+[node name="LimiteInferiorDireito" type="Marker2D" parent="Node"]
+unique_name_in_owner = true

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl2ig7cy70dx5"]
+
+[ext_resource type="Script" uid="uid://ch0eohhndf8ud" path="res://Scripts/Caminho/CaminhoInimigos.gd" id="1_ic0e4"]
+
+[node name="CaminhoInimigos" type="Path2D"]
+script = ExtResource("1_ic0e4")

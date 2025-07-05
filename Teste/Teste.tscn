@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhwhl2op5jr4f"]
+
+[ext_resource type="Script" uid="uid://jif8831a2umd" path="res://Teste/teste.gd" id="1_emq34"]
+[ext_resource type="Script" uid="uid://bw4xnrihu1hva" path="res://Scripts/Caminho/Wave.gd" id="2_ngjby"]
+[ext_resource type="Script" uid="uid://5jckqrk3smvw" path="res://Scripts/Caminho/SpawnInimigo.gd" id="3_tj4h1"]
+
+[sub_resource type="Resource" id="Resource_ngjby"]
+script = ExtResource("3_tj4h1")
+duracao = 15.0
+quantidade = 3
+possiveis_inimigos = Array[int]([0, 1])
+metadata/_custom_type_script = "uid://5jckqrk3smvw"
+
+[sub_resource type="Resource" id="Resource_tj4h1"]
+script = ExtResource("2_ngjby")
+delay_inicial = 0.0
+spawns_inimigo = Array[ExtResource("3_tj4h1")]([SubResource("Resource_ngjby")])
+metadata/_custom_type_script = "uid://bw4xnrihu1hva"
+
+[sub_resource type="Resource" id="Resource_yeam7"]
+script = ExtResource("3_tj4h1")
+duracao = 25.0
+quantidade = 1
+possiveis_inimigos = Array[int]([0, 1])
+metadata/_custom_type_script = "uid://5jckqrk3smvw"
+
+[node name="Teste" type="Node"]
+script = ExtResource("1_emq34")
+minhas_wave = Array[ExtResource("2_ngjby")]([SubResource("Resource_tj4h1")])
+spawns_inimigos = Array[ExtResource("3_tj4h1")]([SubResource("Resource_yeam7")])

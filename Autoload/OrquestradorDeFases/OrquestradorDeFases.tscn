@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvindvvsd004d"]
+
+[ext_resource type="Script" uid="uid://c6lheu2fnkx3f" path="res://Autoload/OrquestradorDeFases/OrquestradorDeFases.gd" id="1_qg52u"]
+[ext_resource type="PackedScene" uid="uid://c64uyuc4x5fv7" path="res://Cenas/UI/GameUI/GameUI.tscn" id="2_fukb8"]
+
+[node name="OrquestradorDeFases" type="Node"]
+script = ExtResource("1_qg52u")
+
+[node name="GameUI" parent="." instance=ExtResource("2_fukb8")]
+
+[connection signal="ir_para_a_proxima_fase" from="GameUI" to="." method="_on_game_ui_ir_para_a_proxima_fase"]
+[connection signal="pedido_para_resetar_fase" from="GameUI" to="." method="_on_game_ui_pedido_para_resetar_fase"]
+[connection signal="pediu_para_sair_do_jogo" from="GameUI" to="." method="_on_game_ui_pediu_para_sair_do_jogo"]

@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="TowerDefenseGodot"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="uid://bpcdkh7u0uc2q"
+
+[autoload]
+
+BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
+GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
+OrquestradorDeFases="*res://Autoload/OrquestradorDeFases/OrquestradorDeFases.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
+
+[gui]
+
+theme/custom="uid://bjbkdsjfwbo0h"
+
+[gui_transitions]
+
+config/default/auto_start=true
+config/default/fade_layout=true
+config/default/center_pivot=true
+config/default/duration=0.5
+config/default/delay=0.5
+config/default/transition_type="QUAD"
+config/default/ease_type="IN_OUT"
+config/default/animation_enter=4
+config/default/animation_leave=4
+
+[layer_names]
+
+2d_physics/layer_1="Mundo"
+2d_physics/layer_2="Inimigos"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
