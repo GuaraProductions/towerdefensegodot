@@ -2,6 +2,7 @@ extends Node
 class_name InimigosCache
 
 enum PossiveisInimigos {
+	NaoDefinido,
 	TanqueCinza,
 	TanqueVermelho
 }

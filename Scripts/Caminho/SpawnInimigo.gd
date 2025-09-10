@@ -31,7 +31,7 @@ func pegar_inimigo_aleatorio() -> InimigosCache.PossiveisInimigos:
 		restante = quantidade
 	
 	if restante < 1:
-		return -1
+		return InimigosCache.PossiveisInimigos.NaoDefinido
 		
 	restante -= 1
 	return possiveis_inimigos.pick_random()

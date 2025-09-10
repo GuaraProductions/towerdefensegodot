@@ -11,7 +11,7 @@ var target_alpha: float = 0.5
 var current_alpha: float = 0
 
 func _process(_delta: float) -> void:
-	print("estou processando")
+
 	mouse_movement_vector = _current_movement \
 	 if mouse_entered_area else Vector2.ZERO
 	colunas.modulate.a = lerpf(colunas.modulate.a, target_alpha if mouse_entered_area else 0.0, 0.05)

@@ -123,7 +123,7 @@ func _gerenciar_spawn_inimigos() -> void:
 			
 			var inimigo_idx = spawn_de_inimigos_atual.pegar_inimigo_aleatorio()
 			
-			if inimigo_idx == -1:
+			if inimigo_idx == InimigosCache.PossiveisInimigos.NaoDefinido:
 				return
 			
 			var inimigo_spawnar = inimigos_cache.pegar_inimigo_instancia(inimigo_idx)

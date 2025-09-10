@@ -100,7 +100,7 @@ func _acao_popup_solicitada(acao: int, area: AreaSpawn) -> void:
 			
 		GerenciadorPopups.Acoes.MELHORAR_TORRE:
 			
-			var preco_upgrade = area.estrutura_get_preco()
+			var preco_upgrade = area.estrutura_get_preco_upgrade()
 			
 			if preco_upgrade > carteira:
 				return
@@ -108,6 +108,17 @@ func _acao_popup_solicitada(acao: int, area: AreaSpawn) -> void:
 			carteira -= preco_upgrade
 			
 			area.fazer_upgrade()
+			
+		GerenciadorPopups.Acoes.ADICIONAR_MUNICAO:
+			
+			var preco_recarregar = area.estrutura_get_preco_recarregar()
+			
+			if preco_recarregar > carteira:
+				return
+				
+			carteira -= preco_recarregar
+			
+			area.recarregar_estrutura()
 	
 func _fase_terminou() -> void:
 	game_ui.mostrar_voce_venceu()

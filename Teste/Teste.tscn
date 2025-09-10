@@ -1,8 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhwhl2op5jr4f"]
+[gd_scene load_steps=7 format=3 uid="uid://bst365iu0xgxj"]
 
-[ext_resource type="Script" uid="uid://jif8831a2umd" path="res://Teste/teste.gd" id="1_emq34"]
 [ext_resource type="Script" uid="uid://bw4xnrihu1hva" path="res://Scripts/Caminho/Wave.gd" id="2_ngjby"]
 [ext_resource type="Script" uid="uid://5jckqrk3smvw" path="res://Scripts/Caminho/SpawnInimigo.gd" id="3_tj4h1"]
+
+[sub_resource type="GDScript" id="GDScript_vt40t"]
+script/source = "extends Node
+
+@export var minhas_wave : Array[Wave] = []
+@export var spawns_inimigos : Array[SpawnInimigo] = []
+
+class Player:
+	var Nome
+	var Vida
+	var Stamina
+	var Mana
+	var Velocidade
+
+	func _init(Nome, Vida, Stamina, Mana, Velocidade):
+		self.Nome = Nome
+		self.Vida = Vida
+		self.Stamina = Stamina
+		self.Velocidade = Velocidade
+		
+	func _to_string() -> String:
+		return \"[Player] nome: %s\" % Nome
+
+func _ready():
+	var Lacoste = Player.new(\"Lacoste\", 523, 12, 32, 32)
+	Lacoste.Nome = \"Lacoste\"
+	Lacoste.Vida = 100
+	Lacoste.Stamina = 50
+	Lacoste.Mana = 50
+	Lacoste.Velocidade = 5
+
+	var Shark = Player.new(\"Shark\", 15, 233, 1233, 323)
+	Shark.Nome = 'Shark'
+	Shark.Vida = 120
+	Shark.Stamina = 70
+	Shark.Mana = 40
+	Shark.Velocidade = 3
+
+	print(Lacoste)
+	print(Shark)
+"
 
 [sub_resource type="Resource" id="Resource_ngjby"]
 script = ExtResource("3_tj4h1")
@@ -25,6 +65,6 @@ possiveis_inimigos = Array[int]([0, 1])
 metadata/_custom_type_script = "uid://5jckqrk3smvw"
 
 [node name="Teste" type="Node"]
-script = ExtResource("1_emq34")
+script = SubResource("GDScript_vt40t")
 minhas_wave = Array[ExtResource("2_ngjby")]([SubResource("Resource_tj4h1")])
 spawns_inimigos = Array[ExtResource("3_tj4h1")]([SubResource("Resource_yeam7")])
