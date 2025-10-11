@@ -1,4 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://w7en1bqi6r3x"]
+[gd_scene load_steps=4 format=3 uid="uid://w7en1bqi6r3x"]
+
+[ext_resource type="LabelSettings" uid="uid://cby8o7b43gc4b" path="res://Themes/CreditsLabelSettings.tres" id="1_xsseh"]
+[ext_resource type="LabelSettings" uid="uid://btm5kvt6jdx3a" path="res://Themes/CreditsLabelSettings2.tres" id="2_6ijb3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n68f"]
 bg_color = Color(0.137255, 0.137255, 0.137255, 0.686275)
@@ -42,18 +45,53 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2n68f")
 text = "Créditos"
 horizontal_alignment = 1
 
-[node name="_" type="VBoxContainer" parent="-/-"]
+[node name="-" type="ScrollContainer" parent="-/-"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CreditosLabel" type="Label" parent="-/-/_"]
+[node name="_" type="VBoxContainer" parent="-/-/-"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Programação:
-- Guará Programador
+size_flags_vertical = 3
 
-Assets:
-- https://kenney.nl/assets/tower-defense-top-down"
+[node name="CreditosLabel" type="Label" parent="-/-/-/_"]
+layout_mode = 2
+text = "Desenvolvedor: Guará Programador"
+label_settings = ExtResource("1_xsseh")
+
+[node name="CreditosLabel2" type="Label" parent="-/-/-/_"]
+layout_mode = 2
+text = "Assets:"
+label_settings = ExtResource("1_xsseh")
+
+[node name="CreditosLabel7" type="Label" parent="-/-/-/_"]
+layout_mode = 2
+text = "- https://kenney.nl/assets/tower-defense-top-down"
+label_settings = ExtResource("2_6ijb3")
+
+[node name="CreditosLabel3" type="Label" parent="-/-/-/_"]
+layout_mode = 2
+text = "Addons:"
+label_settings = ExtResource("1_xsseh")
+
+[node name="CreditosLabel8" type="Label" parent="-/-/-/_"]
+layout_mode = 2
+text = "- Better-terrain por Portponky"
+label_settings = ExtResource("2_6ijb3")
+
+[node name="CreditosLabel4" type="Label" parent="-/-/-/_"]
+layout_mode = 2
+text = "- Maack-options-menus por Mack"
+label_settings = ExtResource("2_6ijb3")
+
+[node name="CreditosLabel5" type="Label" parent="-/-/-/_"]
+layout_mode = 2
+text = "- simple-gui-transitions por murikistudio"
+label_settings = ExtResource("2_6ijb3")
+
+[node name="CreditosLabel6" type="Label" parent="-/-/-/_"]
+layout_mode = 2
+text = "- Sound_Manager por Nathanhoad"
+label_settings = ExtResource("2_6ijb3")
 
 [node name="Voltar" type="Button" parent="-/-"]
 layout_mode = 2

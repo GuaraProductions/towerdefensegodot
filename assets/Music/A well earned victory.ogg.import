@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cjaucuuw5qfcl"
+path="res://.godot/imported/A well earned victory.ogg-298b588de11d131ea498565dd440cbbe.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/Music/A well earned victory.ogg"
+dest_files=["res://.godot/imported/A well earned victory.ogg-298b588de11d131ea498565dd440cbbe.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

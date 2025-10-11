@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://btm5kvt6jdx3a"]
+
+[ext_resource type="FontFile" uid="uid://ct0m40v1h6h20" path="res://addons/simple-gui-transitions/example/stanberry.ttf" id="1_tk22q"]
+
+[resource]
+font = ExtResource("1_tk22q")
+font_size = 32
+stacked_outline_count = 1
+stacked_outline_0/size = 8

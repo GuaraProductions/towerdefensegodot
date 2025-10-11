@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dgyo1rxqgbjg7"]
+[gd_scene load_steps=3 format=3 uid="uid://dgyo1rxqgbjg7"]
+
+[ext_resource type="PackedScene" uid="uid://qqc3c141t2pd" path="res://Cenas/SoundManager/SignalSoundEvent.tscn" id="1_psg0l"]
+[ext_resource type="AudioStream" uid="uid://clgk2oihw42gn" path="res://assets/Sounds/button-click.ogg" id="2_psg0l"]
 
 [node name="MenuPrincipal" type="Control"]
 layout_mode = 3
@@ -25,21 +28,37 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Margin/Center/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
-text = "Tower Defense Guará"
+text = "Ponto de Cerco"
 
 [node name="Jogar" type="Button" parent="Margin/Center/VBox"]
 layout_mode = 2
 text = "Jogar"
 
+[node name="SignalSoundEvent" parent="Margin/Center/VBox/Jogar" instance=ExtResource("1_psg0l")]
+signal_name = "pressed"
+sound_effect = ExtResource("2_psg0l")
+
 [node name="Opcoes" type="Button" parent="Margin/Center/VBox"]
 layout_mode = 2
 text = "Opções"
+
+[node name="SignalSoundEvent2" parent="Margin/Center/VBox/Opcoes" instance=ExtResource("1_psg0l")]
+signal_name = "pressed"
+sound_effect = ExtResource("2_psg0l")
 
 [node name="Creditos" type="Button" parent="Margin/Center/VBox"]
 layout_mode = 2
 text = "Creditos"
 
+[node name="SignalSoundEvent3" parent="Margin/Center/VBox/Creditos" instance=ExtResource("1_psg0l")]
+signal_name = "pressed"
+sound_effect = ExtResource("2_psg0l")
+
 [node name="Sair" type="Button" parent="Margin/Center/VBox"]
 layout_mode = 2
 text = "Sair
 "
+
+[node name="SignalSoundEvent4" parent="Margin/Center/VBox/Sair" instance=ExtResource("1_psg0l")]
+signal_name = "pressed"
+sound_effect = ExtResource("2_psg0l")

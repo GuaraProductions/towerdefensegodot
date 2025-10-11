@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://bex1hun4ku3l"]
+
+[ext_resource type="Script" uid="uid://behwt8y08bx3n" path="res://Autoload/TelaPosFase/TelaPosFase.gd" id="1_cj1an"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fukb8"]
+bg_color = Color(0.0687983, 0.0687983, 0.0687983, 0.513726)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ps0m6"]
+font_size = 58
+font_color = Color(0.458484, 0.635656, 0.49249, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cd57"]
+bg_color = Color(0.0687983, 0.0687983, 0.0687983, 0.513726)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cj1an"]
+font_size = 58
+font_color = Color(0.9430118, 0.37230223, 0.29409212, 1)
+
+[node name="TelaPosFase" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_cj1an")
+
+[node name="TelaVitoria" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_fukb8")
+
+[node name="Center" type="CenterContainer" parent="TelaVitoria"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="TelaVitoria/Center"]
+layout_mode = 2
+theme_override_constants/separation = 58
+
+[node name="VoceVenceuLabel" type="Label" parent="TelaVitoria/Center/VBox"]
+layout_mode = 2
+text = "Você venceu!"
+label_settings = SubResource("LabelSettings_ps0m6")
+horizontal_alignment = 1
+
+[node name="Opcoes" type="HBoxContainer" parent="TelaVitoria/Center/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="ProximaFase" type="Button" parent="TelaVitoria/Center/VBox/Opcoes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Próxima fase"
+
+[node name="Sair" type="Button" parent="TelaVitoria/Center/VBox/Opcoes"]
+layout_mode = 2
+text = "Sair"
+
+[node name="TelaGameOver" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_4cd57")
+
+[node name="Center" type="CenterContainer" parent="TelaGameOver"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="TelaGameOver/Center"]
+layout_mode = 2
+theme_override_constants/separation = 58
+
+[node name="GameOverLabel" type="Label" parent="TelaGameOver/Center/VBox"]
+layout_mode = 2
+text = "Você perdeu!"
+label_settings = SubResource("LabelSettings_cj1an")
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="TelaGameOver/Center/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="TentarNovamente" type="Button" parent="TelaGameOver/Center/VBox/HBox"]
+layout_mode = 2
+text = "Tentar novamente"
+
+[node name="Sair" type="Button" parent="TelaGameOver/Center/VBox/HBox"]
+layout_mode = 2
+text = "Sair"
+
+[connection signal="pressed" from="TelaVitoria/Center/VBox/Opcoes/ProximaFase" to="." method="_on_proxima_fase_pressed"]
+[connection signal="pressed" from="TelaVitoria/Center/VBox/Opcoes/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="TelaGameOver/Center/VBox/HBox/TentarNovamente" to="." method="_on_tentar_novamente_pressed"]
+[connection signal="pressed" from="TelaGameOver/Center/VBox/HBox/Sair" to="." method="_on_sair_pressed"]

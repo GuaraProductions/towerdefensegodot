@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TowerDefenseGodot"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://bpcdkh7u0uc2q"
 
 [autoload]
@@ -19,10 +19,12 @@ config/icon="uid://bpcdkh7u0uc2q"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 GuiTransitions="*res://addons/simple-gui-transitions/singleton.gd"
 OrquestradorDeFases="*res://Autoload/OrquestradorDeFases/OrquestradorDeFases.tscn"
+AppConfig="*res://addons/maaacks_options_menus/base/scenes/autoloads/app_config.tscn"
+SoundManager="*res://addons/sound_manager/sound_manager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg")
+enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg", "res://addons/godotresourcecleaner/plugin.cfg", "res://addons/maaacks_options_menus/plugin.cfg", "res://addons/simple-gui-transitions/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [gui]
 
@@ -40,10 +42,20 @@ config/default/ease_type="IN_OUT"
 config/default/animation_enter=4
 config/default/animation_leave=4
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://addons/maaacks_options_menus/base/translations/menus_translations.en.translation", "res://addons/maaacks_options_menus/base/translations/menus_translations.fr.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Mundo"
 2d_physics/layer_2="Inimigos"
+
+[maaacks_options_menus]
+
+disable_update_check=false
+disable_install_wizard=true
+copy_path="res://Cenas/UI/MenuPrincipal/Opcoes/"
 
 [rendering]
 

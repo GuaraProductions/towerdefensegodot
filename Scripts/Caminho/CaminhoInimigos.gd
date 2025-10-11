@@ -9,6 +9,8 @@ signal fase_terminou()
 
 var tempo_inicial_waves : Array[float] = []
 
+@export var explosao: PackedScene
+
 @export var waves : Array[Wave] = []
 @export var inimigos_cache : InimigosCache
 @export var modo_teste : bool = false
@@ -31,16 +33,12 @@ func _ready() -> void:
 	
 	for wave in waves:
 		
-		#print("wave: ", wave)
 		tempo_acumulado += wave.delay_inicial
 		tempo_inicial_waves.append(tempo_acumulado)
 		tempo_acumulado += wave.duracao
 
 	tempo_total = tempo_acumulado
 	
-	#print("tempo_total: ", tempo_total)
-	#print("tempo_inicial_waves: ", tempo_inicial_waves)
-
 func resetar_waves() -> void:
 	set_physics_process(false)
 	
@@ -198,6 +196,13 @@ func _remover_timers() -> void:
 		timer.queue_free()
 
 func _inimigo_morreu(inimigo) -> void:
+	
+	var explosao_instancia = explosao.instantiate()
+	
+	get_tree().root.add_child(explosao_instancia)
+	explosao_instancia.global_position = inimigo.global_position
+	explosao_instancia.tocar_animacao()
+	
 	if inimigo.has_method("get_recompensa"):
 		inimigo_morreu.emit(inimigo.get_recompensa())
 

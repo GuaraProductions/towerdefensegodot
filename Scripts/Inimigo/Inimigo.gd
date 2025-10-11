@@ -44,14 +44,13 @@ func tomou_dano(nova_vida: float) -> void:
 		queue_free()
 
 func _physics_process(delta: float) -> void:
-	_atualizar_angulo(delta)
-	
-func _atualizar_angulo(delta: float) -> void:
+
 	var posicao_antes = global_position
 	progress += velocidade * delta
 	var posicao_depois = global_position
 	
-	var angulo_direcao = _calcular_angulo(posicao_antes, posicao_depois)
+	var angulo_direcao = \
+	 _calcular_angulo(posicao_antes, posicao_depois)
 	sprite.rotation = \
 	 lerp_angle(sprite.rotation, angulo_direcao, rotacao_velocidade * delta)
 

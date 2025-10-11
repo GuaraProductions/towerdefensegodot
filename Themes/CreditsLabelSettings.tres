@@ -1,0 +1,6 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://cby8o7b43gc4b"]
+
+[resource]
+font_size = 32
+stacked_outline_count = 1
+stacked_outline_0/size = 8

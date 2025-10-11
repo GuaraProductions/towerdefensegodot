@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4p0ht41miyvs"]
+[gd_scene load_steps=8 format=3 uid="uid://b4p0ht41miyvs"]
 
 [ext_resource type="Script" uid="uid://dfju7e6lewt7c" path="res://Scripts/Torres/TorreMetralhadora/TorreMetralhadora.gd" id="1_df4ef"]
 [ext_resource type="Texture2D" uid="uid://buxx4jknafbde" path="res://assets/PNG/Retina/towerDefense_tile250.png" id="2_asvo3"]
 [ext_resource type="Texture2D" uid="uid://xosimxi0fjpv" path="res://assets/PNG/TowerDefenseTiles/towerDefense_tile228.png" id="2_jtr2f"]
 [ext_resource type="Texture2D" uid="uid://ckco1te1opjbh" path="res://assets/PNG/Retina/towerDefense_tile249.png" id="3_df4ef"]
+[ext_resource type="AudioStream" uid="uid://77ubj3n0vymd" path="res://assets/Sounds/fire.ogg" id="3_kyec2"]
+[ext_resource type="AudioStream" uid="uid://c448ll8ofqmdv" path="res://assets/Sounds/reload.ogg" id="4_35n43"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7yd7l"]
 radius = 202.674
@@ -16,6 +18,8 @@ node_textura_upgrade = NodePath("RayCast2D/BaseDaTorre/Metranca")
 area_detector_inimigos = NodePath("DetectorInimigos")
 municao_inicial = 200
 texturas_upgrade = Array[Texture2D]([ExtResource("2_asvo3")])
+som_tiro = ExtResource("3_kyec2")
+som_recarregar = ExtResource("4_35n43")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(99, -1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://bl1gvbjl4f214"]
+[gd_scene load_steps=33 format=4 uid="uid://bl1gvbjl4f214"]
 
 [ext_resource type="Script" uid="uid://bxd2mrcm6j3vi" path="res://Scripts/Fases/Fase1.gd" id="1_8b40t"]
 [ext_resource type="Texture2D" uid="uid://d1rontmhkl71b" path="res://assets/Tilesheet/towerDefense_tilesheet.png" id="2_ps18p"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b1gtolbiywyn4" path="res://Cenas/Torres/AreaSpawn/AreaSpawn.tscn" id="4_44fs7"]
 [ext_resource type="PackedScene" uid="uid://cl2ig7cy70dx5" path="res://Cenas/Caminho/CaminhoInimigos.tscn" id="5_xnubh"]
 [ext_resource type="Script" uid="uid://bw4xnrihu1hva" path="res://Scripts/Caminho/Wave.gd" id="6_nvp7c"]
+[ext_resource type="PackedScene" uid="uid://cmoxf11gi33tb" path="res://Cenas/Inimigo/Efeitos/Explosion.tscn" id="6_ps18p"]
 [ext_resource type="Script" uid="uid://5jckqrk3smvw" path="res://Scripts/Caminho/SpawnInimigo.gd" id="7_pd4yr"]
 [ext_resource type="PackedScene" uid="uid://c64uyuc4x5fv7" path="res://Cenas/UI/GameUI/GameUI.tscn" id="8_8vvm5"]
 [ext_resource type="PackedScene" uid="uid://bityts2d47d5y" path="res://Cenas/Player/MovimentoCameraController/MovimentoCameraController.tscn" id="9_od1vs"]
@@ -516,14 +517,13 @@ metadata/_better_terrain = {
 
 [sub_resource type="Curve2D" id="Curve2D_6y3p2"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 43, 14, 0, 0, 0, 0, 48, 453, 0, 0, 0, 0, 1125, 467, 0, 0, 0, 0, 1132, 991, 0, 0, 0, 0, 264, 1004, 0, 0, 0, 0, 262, 1172, 0, 0, 0, 0, 262, 1341, 0, 0, 0, 0, 252, 1504)
+"points": PackedVector2Array(0, 0, 0, 0, 43, 14, 0, 0, 0, 0, 48, 453, 0, 0, 0, 0, 1125, 467, 0, 0, 0, 0, 1132, 991, 0, 0, 0, 0, 264, 1004, 0, 0, 0, 0, 262, 1172, 0, 0, 0, 0, 262, 1341, 0, 0, 0, 0, 252, 1504, 0, 0, 0, 0, 247, 1626)
 }
-point_count = 8
+point_count = 9
 
 [sub_resource type="Resource" id="Resource_7wxqg"]
 script = ExtResource("7_pd4yr")
 duracao = 5.0
-quantidade = 1
 possiveis_inimigos = Array[int]([0])
 metadata/_custom_type_script = "uid://5jckqrk3smvw"
 
@@ -618,6 +618,7 @@ position = Vector2(894, 442)
 [node name="CaminhoInimigos" parent="." node_paths=PackedStringArray("inimigos_cache") instance=ExtResource("5_xnubh")]
 position = Vector2(0, -250)
 curve = SubResource("Curve2D_6y3p2")
+explosao = ExtResource("6_ps18p")
 waves = Array[ExtResource("6_nvp7c")]([SubResource("Resource_e78nn")])
 inimigos_cache = NodePath("../CacheInimigosTerrestres")
 
@@ -661,7 +662,7 @@ script = ExtResource("11_p6buf")
 "torres_disponíveis" = Array[ExtResource("12_qf34p")]([SubResource("Resource_s2a1p"), SubResource("Resource_arv1i")])
 
 [node name="PontoFinalInimigo" parent="." groups=["PontosFinais"] instance=ExtResource("17_tq0wx")]
-position = Vector2(261, 1190)
+position = Vector2(256, 1284)
 
 [node name="CollisionShape2D" parent="PontoFinalInimigo" index="0"]
 position = Vector2(-1.5, -7)
@@ -670,6 +671,7 @@ shape = SubResource("RectangleShape2D_a2hqg")
 [node name="Popups" parent="." instance=ExtResource("18_53aow")]
 
 [node name="JanelaOpcoesDeTorres" parent="." instance=ExtResource("19_pwj44")]
+oversampling_override = 1.0
 visible = false
 
 [editable path="CameraPlayer"]

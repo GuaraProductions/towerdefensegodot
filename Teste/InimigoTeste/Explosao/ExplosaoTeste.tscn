@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://pcuvuv7vebyq"]
+
+[ext_resource type="Script" uid="uid://crx2m4087bwcr" path="res://Teste/InimigoTeste/Explosao/explosao_teste.gd" id="1_f61fe"]
+[ext_resource type="PackedScene" uid="uid://cm0f3fg2b3c12" path="res://Cenas/Inimigo/TanqueVermelho.tscn" id="2_f61fe"]
+
+[node name="ExplosaoTeste" type="Node2D"]
+script = ExtResource("1_f61fe")
+
+[node name="Inimigo" parent="." instance=ExtResource("2_f61fe")]
+position = Vector2(537, 283)

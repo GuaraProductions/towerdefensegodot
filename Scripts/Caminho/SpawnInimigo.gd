@@ -1,8 +1,6 @@
 extends Resource
 class_name SpawnInimigo
 
-## Tempo exato onde o spawn do inimigo vai comecar, 
-## esse tempo eh relativo ao tempo inicial da wave
 @export var duracao : float = 0.0
 @export var quantidade : int = 1
 @export var possiveis_inimigos : Array[InimigosCache.PossiveisInimigos]
@@ -27,11 +25,9 @@ func _init(p_duracao : float = 0.0,
 
 func pegar_inimigo_aleatorio() -> InimigosCache.PossiveisInimigos:
 	
-	if restante == -1:
-		restante = quantidade
+	if restante == -1: restante = quantidade
 	
-	if restante < 1:
-		return InimigosCache.PossiveisInimigos.NaoDefinido
+	if restante < 1: return InimigosCache.PossiveisInimigos.NaoDefinido
 		
 	restante -= 1
 	return possiveis_inimigos.pick_random()

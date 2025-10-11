@@ -17,6 +17,9 @@ class_name TorreGenerica
 @export var preco_upgrade : int = 25
 @export var preco_recarregar : int = 15
 @export var dano := 15.5
+@export_category("Sound")
+@export var som_tiro : AudioStream
+@export var som_recarregar : AudioStream
 
 var municao := 50
 
@@ -49,7 +52,7 @@ func _ready() -> void:
 	area_detector_inimigos.area_entered.connect(_on_detector_inimigos_area_entered)
 	area_detector_inimigos.area_exited.connect(_on_detector_inimigos_area_exited)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	if inimigos.size() == 0:
 		return
@@ -71,6 +74,7 @@ func fazer_upgrade() -> void:
 	
 func recarregar_estrutura() -> void:
 	var municao_anterior = municao
+	SoundManager.play_sound(som_recarregar)
 	municao = clamp(municao + municao_ao_recarregar, 0, municao_maxima)
 	barra_de_progresso_municao.value += municao - municao_anterior
 	
@@ -88,7 +92,7 @@ func _atirar() -> void:
 	barra_de_progresso_municao.value -= 1
 	
 	inimigo_atual.tomou_dano(dano)
-	print("atirou")
+	SoundManager.play_sound(som_tiro)
 	frequencia_tiro.start()
 
 func _olhar_para_inimigo(delta: float) -> void:

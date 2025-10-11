@@ -1,6 +1,8 @@
 extends Area2D
 class_name AreaSpawn
 
+@export var spawn_audio: AudioStream
+
 signal foi_clicado()
 
 const NOME_GRUPO : String = "AreaSpawn"
@@ -28,7 +30,7 @@ func _input_event(_viewport: Viewport,
 
 func spawnar_estrutura(torre: TorreInfo) -> void:
 	estrutura_spawnada = torre.instanciar_torre()
-	print("aqui?")
+	SoundManager.play_sound(spawn_audio)
 	add_child(estrutura_spawnada)
 	
 func despawnar_estrutura() -> void:

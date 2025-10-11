@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsmcjhvggenxl"]
+
+[ext_resource type="PackedScene" uid="uid://bex1hun4ku3l" path="res://Autoload/TelaPosFase/TelaPosFase.tscn" id="1_owj35"]
+[ext_resource type="Script" uid="uid://b5s3uksxusfle" path="res://Teste/UI/TelaPosFaseTeste.gd" id="1_uq4e0"]
+
+[node name="TelaPosFaseTeste" type="Node"]
+script = ExtResource("1_uq4e0")
+
+[node name="TelaPosFase" parent="." instance=ExtResource("1_owj35")]
+unique_name_in_owner = true
+
+[connection signal="ir_para_a_proxima_fase" from="TelaPosFase" to="." method="_on_tela_pos_fase_ir_para_a_proxima_fase"]
+[connection signal="pedido_para_resetar_fase" from="TelaPosFase" to="." method="_on_tela_pos_fase_pedido_para_resetar_fase"]
+[connection signal="pediu_para_sair_do_jogo" from="TelaPosFase" to="." method="_on_tela_pos_fase_pediu_para_sair_do_jogo"]

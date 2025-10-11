@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wqo0q3mg6np3"]
+
+[ext_resource type="Script" uid="uid://xvvf77ep038q" path="res://Scripts/SoundManager/ExportSignalSound.gd" id="1_do4ga"]
+
+[node name="ExportSignalSound" type="Node"]
+script = ExtResource("1_do4ga")

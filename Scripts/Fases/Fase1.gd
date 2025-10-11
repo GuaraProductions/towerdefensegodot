@@ -1,6 +1,13 @@
 extends Node2D
 class_name Fase
 
+enum FimFase {
+	PERDEU,
+	VENCEU
+}
+
+signal fase_acabou(fim_fase_estado: FimFase)
+
 @export_category("Propriedades da fase")
 @export var DINHEIRO_MAXIMO : int = 500
 @export var modo_teste: bool = false
@@ -37,7 +44,8 @@ func _set_vida(n_vida: float) -> void:
 	
 	if vida <= 0:
 		movimento_camera.visible = false
-		game_ui.mostrar_game_over()
+		SoundManager.stop_music(5)
+		fase_acabou.emit(FimFase.PERDEU)
 	
 func _set_carteira(n_carteira: int) -> void:
 	carteira = clamp(n_carteira,0, DINHEIRO_MAXIMO)
@@ -72,8 +80,6 @@ func iniciar_fase(n_game_ui : GameUI = null) -> void:
 	
 	for ponto in pontos_finais:
 		var _err = ponto.inimigo_atingiu_meta.connect(_inimigo_atingiu_meta)
-		
-	game_ui.pedido_para_resetar_fase.connect(resetar_fase)
 	
 func _acao_popup_solicitada(acao: int, area: AreaSpawn) -> void:
 	
@@ -121,7 +127,12 @@ func _acao_popup_solicitada(acao: int, area: AreaSpawn) -> void:
 			area.recarregar_estrutura()
 	
 func _fase_terminou() -> void:
-	game_ui.mostrar_voce_venceu()
+	
+	SoundManager.stop_music(5)
+	
+	await get_tree().create_timer(5).timeout
+	
+	fase_acabou.emit(FimFase.VENCEU)
 	
 func resetar_fase() -> void:
 	

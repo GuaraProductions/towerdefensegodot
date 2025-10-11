@@ -27,6 +27,7 @@ func _process(_delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 	
+	
 func _unhandled_input(event: InputEvent) -> void:
 	
 	if event is InputEventMouseButton:
