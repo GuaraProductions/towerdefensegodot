@@ -1,8 +1,53 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bjbkdsjfwbo0h"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bjbkdsjfwbo0h"]
 
 [ext_resource type="FontFile" uid="uid://d6tubrn1txl0" path="res://assets/Font/ChangaOne-Regular.ttf" id="1_0xtbp"]
+[ext_resource type="StyleBox" uid="uid://c642o6dgas6b5" path="res://Themes/Button/FocusButton.tres" id="1_xns0a"]
+[ext_resource type="Texture2D" uid="uid://pop00l5t4mc6" path="res://assets/PNG/Default/panel_brown_dark.png" id="2_wsb5w"]
+[ext_resource type="StyleBox" uid="uid://cyuq1iaiefb2w" path="res://Themes/Button/NormalButton.tres" id="2_xns0a"]
+[ext_resource type="Texture2D" uid="uid://b6cn0gyx8ggp4" path="res://assets/PNG/Default/panel_grid_blueprint.png" id="3_xns0a"]
+[ext_resource type="Texture2D" uid="uid://drq4rxcn4klph" path="res://assets/PNG/Default/panel_grid_paper.png" id="4_3rjts"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hii54"]
+texture = ExtResource("2_wsb5w")
+texture_margin_left = 6.398884
+texture_margin_top = 6.2491693
+texture_margin_right = 6.0747867
+texture_margin_bottom = 5.8054123
+region_rect = Rect2(-0.32645226, -0.35392797, 63.591934, 63.562355)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l2l88"]
+texture = ExtResource("3_xns0a")
+texture_margin_left = 16.794281
+texture_margin_top = 16.327772
+texture_margin_right = 14.928249
+texture_margin_bottom = 15.861265
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+modulate_color = Color(0.7539839, 0.75398386, 0.75398386, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxm2q"]
+texture = ExtResource("4_3rjts")
+texture_margin_left = 15.394757
+texture_margin_top = 16.794281
+texture_margin_right = 15.861265
+texture_margin_bottom = 16.794281
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [resource]
 default_font = ExtResource("1_0xtbp")
+Button/colors/font_color = Color(0.33660707, 0.33660787, 0.33660737, 1)
 Button/font_sizes/font_size = 32
+Button/styles/focus = ExtResource("1_xns0a")
+Button/styles/hover = ExtResource("1_xns0a")
+Button/styles/normal = ExtResource("2_xns0a")
+TabContainer/colors/font_selected_color = Color(0.1275709, 0.20332173, 0.3790462, 1)
+TabContainer/colors/font_unselected_color = Color(0.24840015, 0.24840018, 0.24840015, 1)
+TabContainer/styles/panel = SubResource("StyleBoxTexture_hii54")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_l2l88")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_rxm2q")
 VBoxContainer/constants/separation = 15

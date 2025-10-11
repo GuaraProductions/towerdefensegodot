@@ -526,9 +526,6 @@ metadata/_custom_type_script = "uid://b5ixsf3s5xxlt"
 
 [node name="MenuPrincipal" parent="." instance=ExtResource("1_oqgt3")]
 
-[node name="Label" parent="MenuPrincipal/Margin/Center/VBox" index="0"]
-text = "Toon Towers"
-
 [node name="GuiTransition2" type="Node" parent="MenuPrincipal"]
 script = ExtResource("4_hocvv")
 animation_enter = 0
@@ -553,7 +550,7 @@ duration = 1.0
 delay = 0.2
 layout = NodePath("..")
 layout_id = "Creditos"
-controls = Array[NodePath]([NodePath("../-/-/Titulo"), NodePath("../-/-/-/_/CreditosLabel"), NodePath("../-/-/-/_/CreditosLabel2"), NodePath("../-/-/-/_/CreditosLabel7"), NodePath("../-/-/-/_/CreditosLabel3"), NodePath("../-/-/-/_/CreditosLabel8"), NodePath("../-/-/-/_/CreditosLabel4"), NodePath("../-/-/-/_/CreditosLabel5"), NodePath("../-/-/-/_/CreditosLabel6")])
+controls = Array[NodePath]([NodePath("../-/-/Titulo"), NodePath("../-/-/-/_/CreditosLabel"), NodePath("../-/-/-/_/CreditosLabel2"), NodePath("../-/-/-/_/CreditosLabel7"), NodePath("../-/-/-/_/CreditosLabel9"), NodePath("../-/-/-/_/CreditosLabel3"), NodePath("../-/-/-/_/CreditosLabel8"), NodePath("../-/-/-/_/CreditosLabel4"), NodePath("../-/-/-/_/CreditosLabel5"), NodePath("../-/-/-/_/CreditosLabel6")])
 metadata/_custom_type_script = "uid://b5ixsf3s5xxlt"
 
 [node name="MasterOptionsMenu" parent="." instance=ExtResource("7_ud4of")]

@@ -68,6 +68,11 @@ layout_mode = 2
 text = "- https://kenney.nl/assets/tower-defense-top-down"
 label_settings = ExtResource("2_6ijb3")
 
+[node name="CreditosLabel9" type="Label" parent="-/-/-/_"]
+layout_mode = 2
+text = "- https://kenney.nl/assets/ui-pack-adventure"
+label_settings = ExtResource("2_6ijb3")
+
 [node name="CreditosLabel3" type="Label" parent="-/-/-/_"]
 layout_mode = 2
 text = "Addons:"

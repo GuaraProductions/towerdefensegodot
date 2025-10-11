@@ -16,7 +16,7 @@ func resetar_interface() -> void:
 	layer = 1
 
 func atualizar_dinheiro(dinheiro: int) -> void:
-	dinheiro_label.text = "Dinheiro: %d" % [dinheiro]
+	dinheiro_label.text = "💲%d" % [dinheiro]
 	print(dinheiro_label.text)
 
 func configurar_tamanho_vida(vida_total: float) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvxeorqhgy2ue"
-path="res://.godot/imported/banner_classic_curtain.png-25b5c8ed56d79c243a1f38699c504fc0.ctex"
+uid="uid://b78m5vfnttih1"
+path="res://.godot/imported/emote_exclamations.png-4bc510202af4de9c1179a08fe5fb1b50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/PNG/Default/banner_classic_curtain.png"
-dest_files=["res://.godot/imported/banner_classic_curtain.png-25b5c8ed56d79c243a1f38699c504fc0.ctex"]
+source_file="res://assets/PNG/Emotes/emote_exclamations.png"
+dest_files=["res://.godot/imported/emote_exclamations.png-4bc510202af4de9c1179a08fe5fb1b50.ctex"]
 
 [params]
 

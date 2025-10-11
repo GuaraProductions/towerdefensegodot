@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgyo1rxqgbjg7"]
+[gd_scene load_steps=5 format=3 uid="uid://dgyo1rxqgbjg7"]
 
 [ext_resource type="PackedScene" uid="uid://qqc3c141t2pd" path="res://Cenas/SoundManager/SignalSoundEvent.tscn" id="1_psg0l"]
+[ext_resource type="Texture2D" uid="uid://cvxeorqhgy2ue" path="res://assets/PNG/Default/banner_classic_curtain.png" id="1_vbnbe"]
 [ext_resource type="AudioStream" uid="uid://clgk2oihw42gn" path="res://assets/Sounds/button-click.ogg" id="2_psg0l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vbnbe"]
+font_size = 56
 
 [node name="MenuPrincipal" type="Control"]
 layout_mode = 3
@@ -25,10 +29,26 @@ layout_mode = 2
 [node name="VBox" type="VBoxContainer" parent="Margin/Center"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Margin/Center/VBox"]
+[node name="Banner" type="TextureRect" parent="Margin/Center/VBox"]
+custom_minimum_size = Vector2(400, 150)
 layout_mode = 2
-theme_override_font_sizes/font_size = 56
-text = "Ponto de Cerco"
+texture = ExtResource("1_vbnbe")
+expand_mode = 2
+
+[node name="-" type="MarginContainer" parent="Margin/Center/VBox/Banner"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 35
+
+[node name="Label" type="Label" parent="Margin/Center/VBox/Banner/-"]
+layout_mode = 2
+text = "Toon Towers"
+label_settings = SubResource("LabelSettings_vbnbe")
+horizontal_alignment = 1
 
 [node name="Jogar" type="Button" parent="Margin/Center/VBox"]
 layout_mode = 2
