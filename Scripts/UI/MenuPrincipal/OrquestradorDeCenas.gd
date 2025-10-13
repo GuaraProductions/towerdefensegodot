@@ -10,6 +10,7 @@ func _ready() -> void:
 	SoundManager.play_music(musica_menu, 1, "Music")
 	menu_principal.visible = true
 	seletor_de_fases.visible = false
+	GuiTransitions.go_to("MenuPrincipal")
 
 func _on_jogar_pressed() -> void:
 	GuiTransitions.go_to("SeletorDeFases")

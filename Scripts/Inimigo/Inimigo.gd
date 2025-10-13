@@ -41,7 +41,7 @@ func tomou_dano(nova_vida: float) -> void:
 
 	if vida <= 0:
 		assassinado.emit()
-		queue_free()
+		set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
 

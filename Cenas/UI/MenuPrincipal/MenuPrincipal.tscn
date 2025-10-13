@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgyo1rxqgbjg7"]
 
 [ext_resource type="PackedScene" uid="uid://qqc3c141t2pd" path="res://Cenas/SoundManager/SignalSoundEvent.tscn" id="1_psg0l"]
-[ext_resource type="Texture2D" uid="uid://cvxeorqhgy2ue" path="res://assets/PNG/Default/banner_classic_curtain.png" id="1_vbnbe"]
+[ext_resource type="PackedScene" uid="uid://deep0pql2xblx" path="res://Cenas/UI/MenuPrincipal/Banner.tscn" id="1_vbnbe"]
 [ext_resource type="AudioStream" uid="uid://clgk2oihw42gn" path="res://assets/Sounds/button-click.ogg" id="2_psg0l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vbnbe"]
@@ -29,22 +29,10 @@ layout_mode = 2
 [node name="VBox" type="VBoxContainer" parent="Margin/Center"]
 layout_mode = 2
 
-[node name="Banner" type="TextureRect" parent="Margin/Center/VBox"]
-custom_minimum_size = Vector2(400, 150)
+[node name="Banner" parent="Margin/Center/VBox" instance=ExtResource("1_vbnbe")]
 layout_mode = 2
-texture = ExtResource("1_vbnbe")
-expand_mode = 2
 
-[node name="-" type="MarginContainer" parent="Margin/Center/VBox/Banner"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_bottom = 35
-
-[node name="Label" type="Label" parent="Margin/Center/VBox/Banner/-"]
+[node name="Label" type="Label" parent="Margin/Center/VBox/Banner/-" index="0"]
 layout_mode = 2
 text = "Toon Towers"
 label_settings = SubResource("LabelSettings_vbnbe")
@@ -82,3 +70,5 @@ text = "Sair
 [node name="SignalSoundEvent4" parent="Margin/Center/VBox/Sair" instance=ExtResource("1_psg0l")]
 signal_name = "pressed"
 sound_effect = ExtResource("2_psg0l")
+
+[editable path="Margin/Center/VBox/Banner"]

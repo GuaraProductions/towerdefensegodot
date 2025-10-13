@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cmoxf11gi33tb"]
+[gd_scene load_steps=30 format=3 uid="uid://cmoxf11gi33tb"]
 
 [ext_resource type="Texture2D" uid="uid://dfi2caj133iyl" path="res://assets/Explosion/0001.png" id="1_n13tl"]
 [ext_resource type="Texture2D" uid="uid://gygram43jgb" path="res://assets/Explosion/0002.png" id="2_c6oab"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bpqa8ejdahott" path="res://assets/Explosion/0025.png" id="25_cxplx"]
 [ext_resource type="Script" uid="uid://cic0fxylatkqr" path="res://Scripts/Inimigo/Efeitos/Explosion.gd" id="26_c6oab"]
 [ext_resource type="AudioStream" uid="uid://bh4fprer1lon7" path="res://assets/Sounds/explosion.ogg" id="27_re0w1"]
+[ext_resource type="PackedScene" uid="uid://dda7oohif06yr" path="res://Cenas/Inimigo/Efeitos/ExplosionBlast.tscn" id="28_wmblj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w1axv"]
 animations = [{
@@ -119,5 +120,7 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_w1axv")
 script = ExtResource("26_c6oab")
 sound_effect = ExtResource("27_re0w1")
+blast_result = ExtResource("28_wmblj")
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="frame_changed" from="." to="." method="_on_frame_changed"]

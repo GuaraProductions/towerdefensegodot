@@ -525,6 +525,7 @@ layout_id = "SeletorDeFases"
 metadata/_custom_type_script = "uid://b5ixsf3s5xxlt"
 
 [node name="MenuPrincipal" parent="." instance=ExtResource("1_oqgt3")]
+visible = false
 
 [node name="GuiTransition2" type="Node" parent="MenuPrincipal"]
 script = ExtResource("4_hocvv")
@@ -550,7 +551,7 @@ duration = 1.0
 delay = 0.2
 layout = NodePath("..")
 layout_id = "Creditos"
-controls = Array[NodePath]([NodePath("../-/-/Titulo"), NodePath("../-/-/-/_/CreditosLabel"), NodePath("../-/-/-/_/CreditosLabel2"), NodePath("../-/-/-/_/CreditosLabel7"), NodePath("../-/-/-/_/CreditosLabel9"), NodePath("../-/-/-/_/CreditosLabel3"), NodePath("../-/-/-/_/CreditosLabel8"), NodePath("../-/-/-/_/CreditosLabel4"), NodePath("../-/-/-/_/CreditosLabel5"), NodePath("../-/-/-/_/CreditosLabel6")])
+controls = Array[NodePath]([NodePath("../-/-/Banner"), NodePath("../-/-/-/_/CreditosLabel"), NodePath("../-/-/-/_/CreditosLabel2"), NodePath("../-/-/-/_/CreditosLabel7"), NodePath("../-/-/-/_/CreditosLabel9"), NodePath("../-/-/-/_/CreditosLabel3"), NodePath("../-/-/-/_/CreditosLabel8"), NodePath("../-/-/-/_/CreditosLabel4"), NodePath("../-/-/-/_/CreditosLabel5"), NodePath("../-/-/-/_/CreditosLabel6")])
 metadata/_custom_type_script = "uid://b5ixsf3s5xxlt"
 
 [node name="MasterOptionsMenu" parent="." instance=ExtResource("7_ud4of")]
@@ -571,6 +572,9 @@ metadata/_custom_type_script = "uid://b5ixsf3s5xxlt"
 [connection signal="pressed" from="MasterOptionsMenu/Back" to="." method="_on_back_pressed"]
 
 [editable path="SeletorDeFases"]
+[editable path="SeletorDeFases/Margin/VBox/Banner"]
 [editable path="MenuPrincipal"]
+[editable path="MenuPrincipal/Margin/Center/VBox/Banner"]
 [editable path="Creditos"]
+[editable path="Creditos/-/-/Banner"]
 [editable path="MasterOptionsMenu"]

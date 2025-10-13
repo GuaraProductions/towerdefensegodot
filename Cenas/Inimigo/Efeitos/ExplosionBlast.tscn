@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://dda7oohif06yr"]
+
+[ext_resource type="Script" uid="uid://41j1sab8figi" path="res://Scripts/Inimigo/Efeitos/ExplosionBlast.gd" id="1_wmpb2"]
+[ext_resource type="Texture2D" uid="uid://dok5gr34c5gqs" path="res://assets/PNG/Efeitos/ExplosionBlast1.png" id="2_17ee5"]
+[ext_resource type="Texture2D" uid="uid://df7br7t8mqoap" path="res://assets/PNG/Efeitos/ExplosionBlast2.png" id="3_fntde"]
+[ext_resource type="Texture2D" uid="uid://v1ush6l8omav" path="res://assets/PNG/Efeitos/ExplosionBlast3.png" id="4_oe223"]
+
+[node name="ExplosionBlast" type="Sprite2D"]
+script = ExtResource("1_wmpb2")
+possible_sprites = Array[Texture2D]([ExtResource("2_17ee5"), ExtResource("3_fntde"), ExtResource("4_oe223")])

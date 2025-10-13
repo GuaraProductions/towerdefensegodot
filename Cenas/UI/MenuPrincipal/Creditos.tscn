@@ -1,18 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://w7en1bqi6r3x"]
 
+[ext_resource type="PackedScene" uid="uid://deep0pql2xblx" path="res://Cenas/UI/MenuPrincipal/Banner.tscn" id="1_6ijb3"]
 [ext_resource type="LabelSettings" uid="uid://cby8o7b43gc4b" path="res://Themes/CreditsLabelSettings.tres" id="1_xsseh"]
 [ext_resource type="LabelSettings" uid="uid://btm5kvt6jdx3a" path="res://Themes/CreditsLabelSettings2.tres" id="2_6ijb3"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n68f"]
-bg_color = Color(0.137255, 0.137255, 0.137255, 0.686275)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-expand_margin_left = 15.0
-expand_margin_top = 15.0
-expand_margin_right = 15.0
-expand_margin_bottom = 5.0
 
 [node name="Creditos" type="Control"]
 layout_mode = 3
@@ -37,11 +27,18 @@ theme_override_constants/margin_bottom = 25
 [node name="-" type="VBoxContainer" parent="-"]
 layout_mode = 2
 
-[node name="Titulo" type="Label" parent="-/-"]
+[node name="Banner" parent="-/-" instance=ExtResource("1_6ijb3")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="-" parent="-/-/Banner" index="0"]
+theme_override_constants/margin_bottom = 20
+
+[node name="Titulo" type="Label" parent="-/-/Banner/-" index="0"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_2n68f")
 text = "Créditos"
 horizontal_alignment = 1
 
@@ -101,3 +98,5 @@ label_settings = ExtResource("2_6ijb3")
 [node name="Voltar" type="Button" parent="-/-"]
 layout_mode = 2
 text = "Voltar"
+
+[editable path="-/-/Banner"]

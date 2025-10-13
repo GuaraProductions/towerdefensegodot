@@ -199,12 +199,14 @@ func _inimigo_morreu(inimigo) -> void:
 	
 	var explosao_instancia = explosao.instantiate()
 	
-	get_tree().root.add_child(explosao_instancia)
+	get_parent().spawn_blast(explosao_instancia)
 	explosao_instancia.global_position = inimigo.global_position
 	explosao_instancia.tocar_animacao()
 	
 	if inimigo.has_method("get_recompensa"):
 		inimigo_morreu.emit(inimigo.get_recompensa())
+		
+	inimigo.queue_free()
 
 func _to_string() -> String:
 	return "Wave: %d\nSubWaveAtual: %d\nTempo: %s" % [wave_atual+1, sub_wave_atual+1, str(tempo_atual).pad_decimals(2)]

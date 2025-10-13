@@ -1,14 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqgdy6r8atbdx"]
+[gd_scene load_steps=8 format=3 uid="uid://cqgdy6r8atbdx"]
 
 [ext_resource type="Script" uid="uid://dm71nvi1v54m8" path="res://Scripts/UI/GameUI/JanelaOpcoesTorres/JanelaOpcoesTorres.gd" id="1_7tlxx"]
 [ext_resource type="PackedScene" uid="uid://dgvltt2hmjry2" path="res://Cenas/UI/GameUI/JanelaOpcoesDeTorres/TorreOpcao.tscn" id="2_uvj1m"]
+[ext_resource type="Texture2D" uid="uid://d366xm1omekho" path="res://assets/PNG/Default/panel_grey.png" id="3_b5rpc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvj1m"]
+bg_color = Color(0.20392157, 0.26666668, 0.3647059, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.20871013, 0.20871016, 0.20870999, 1)
+expand_margin_top = 35.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1jbqa"]
+texture = ExtResource("3_b5rpc")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_b5rpc"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jbqa"]
+bg_color = Color(0.2945725, 0.39068645, 0.47118264, 1)
 
 [node name="JanelaOpcoesDeTorres" type="Window"]
 auto_translate_mode = 1
+transparent_bg = true
+snap_2d_transforms_to_pixel = true
+oversampling_override = 1.0
 title = "Escolha a torre para spawnar"
 position = Vector2i(0, 36)
 size = Vector2i(500, 500)
+transparent = true
 content_scale_mode = 1
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_uvj1m")
 script = ExtResource("1_7tlxx")
 torre_opcoes_cena = ExtResource("2_uvj1m")
 
@@ -28,28 +61,33 @@ layout_mode = 2
 size_flags_horizontal = 3
 columns = 3
 
-[node name="TorreInfo" type="VBoxContainer" parent="_/_"]
+[node name="TorreInfo" type="PanelContainer" parent="_/_"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_1jbqa")
+
+[node name="_" type="VBoxContainer" parent="_/_/TorreInfo"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Nome" type="Label" parent="_/_/TorreInfo"]
+[node name="Nome" type="Label" parent="_/_/TorreInfo/_"]
 unique_name_in_owner = true
 layout_mode = 2
+label_settings = SubResource("LabelSettings_b5rpc")
+horizontal_alignment = 1
 
-[node name="Textura" type="TextureRect" parent="_/_/TorreInfo"]
+[node name="Textura" type="TextureRect" parent="_/_/TorreInfo/_"]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 
-[node name="Descricao" type="Label" parent="_/_/TorreInfo"]
+[node name="Descricao" type="Label" parent="_/_/TorreInfo/_"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="Propriedades" type="Label" parent="_/_/TorreInfo"]
-unique_name_in_owner = true
-layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_1jbqa")
+horizontal_alignment = 1
 
 [connection signal="about_to_popup" from="." to="." method="_on_about_to_popup"]
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]

@@ -1,6 +1,7 @@
 extends Node
 
-const MENU_PRINCIPAL : PackedScene = preload("res://Cenas/UI/MenuPrincipal/OrquestradorMenus.tscn")
+const MENU_PRINCIPAL : PackedScene = \
+ preload("res://Cenas/UI/MenuPrincipal/OrquestradorMenus.tscn")
 
 @export var musica_da_fase: AudioStream
 @export var musica_vitoria: AudioStream
@@ -32,6 +33,9 @@ func iniciar_ciclo_de_fases(fase_indice: int,
 		_resetar_parametros()
 		return
 
+	if fases_acabou():
+		tela_pos_fase.desativar_proxima_fase()
+
 	get_tree().current_scene.queue_free()
 
 	_comecar_fase()
@@ -43,12 +47,15 @@ func _pedido_para_resetar_fase() -> void:
 
 func _pediu_para_sair_do_jogo() -> void:
 	tela_pos_fase.visible = false
+	game_ui.resetar_interface()
+	game_ui.visible = false
 	if not fase_atual:
 		printerr("Nenhuma fase foi carregada!")
 		return
 		
 	fase_atual.queue_free()
 	fase_atual = null
+	_resetar_parametros()
 	
 	if not MENU_PRINCIPAL.can_instantiate():
 		printerr("Menu principal nao esta configurado!")
@@ -57,6 +64,7 @@ func _pediu_para_sair_do_jogo() -> void:
 	
 	menu_principal.tree_entered.connect(get_tree().set_current_scene.bind(menu_principal), CONNECT_ONE_SHOT)
 	
+	get_tree().paused = false
 	get_tree().root.add_child(menu_principal)
 
 func _ir_para_a_proxima_fase() -> void:
@@ -102,7 +110,7 @@ func fase_atual_acabou(resultado: Fase.FimFase) -> void:
 			pass
 	
 func fases_acabou() -> bool:
-	return indice_atual >= todas_as_fases.size()
+	return indice_atual >= todas_as_fases.size() - 1
 	
 func _resetar_parametros() -> void:
 	indice_atual = -1

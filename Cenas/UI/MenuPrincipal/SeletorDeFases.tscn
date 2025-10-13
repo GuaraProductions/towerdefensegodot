@@ -1,19 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://4kbxlab05p5k"]
+[gd_scene load_steps=8 format=3 uid="uid://4kbxlab05p5k"]
 
 [ext_resource type="Script" uid="uid://chfhadjlrtjba" path="res://Scripts/UI/MenuPrincipal/SeletorDeFases.gd" id="1_1881g"]
 [ext_resource type="PackedScene" uid="uid://bl1gvbjl4f214" path="res://Cenas/Fases/FasesDisponiveis/Fase1.tscn" id="2_e1sag"]
 [ext_resource type="PackedScene" uid="uid://s80qhxv684dw" path="res://Cenas/Fases/FasesDisponiveis/Fase2.tscn" id="3_6g6qw"]
 [ext_resource type="PackedScene" uid="uid://b4xt4v881fujv" path="res://Cenas/UI/MenuPrincipal/FaseButton.tscn" id="3_biyup"]
+[ext_resource type="Texture2D" uid="uid://dq4gps48r54pv" path="res://assets/PNG/Default/panel_brown_dark_corners_b.png" id="5_byw0c"]
+[ext_resource type="PackedScene" uid="uid://deep0pql2xblx" path="res://Cenas/UI/MenuPrincipal/Banner.tscn" id="5_lm0ai"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_biyup"]
-bg_color = Color(0.137255, 0.137255, 0.137255, 0.686275)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-expand_margin_left = 15.0
-expand_margin_top = 15.0
-expand_margin_right = 15.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lm0ai"]
+texture = ExtResource("5_byw0c")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
 [node name="SeletorDeFases" type="Control"]
@@ -43,11 +45,17 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 theme_override_constants/separation = 45
 
-[node name="Label" type="Label" parent="Margin/VBox"]
+[node name="Banner" parent="Margin/VBox" instance=ExtResource("5_lm0ai")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="-" parent="Margin/VBox/Banner" index="0"]
+theme_override_constants/margin_bottom = 25
+
+[node name="Label" type="Label" parent="Margin/VBox/Banner/-" index="0"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_biyup")
 text = "Escolha uma fase"
 horizontal_alignment = 1
 
@@ -63,5 +71,9 @@ columns = 5
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.828263, 0.8942545, 0.9756972, 1)
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_lm0ai")
 text = "Voltar"
+
+[editable path="Margin/VBox/Banner"]

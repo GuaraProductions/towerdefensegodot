@@ -7,7 +7,6 @@ signal torre_escolhida(torre_info: TorreInfo)
 @onready var nome: Label = %Nome
 @onready var descricao: Label = %Descricao
 @onready var textura: TextureRect = %Textura
-@onready var propriedades: Label = %Propriedades
 
 @export var torre_opcoes_cena : PackedScene
 

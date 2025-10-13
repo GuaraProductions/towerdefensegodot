@@ -1,6 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bityts2d47d5y"]
+[gd_scene load_steps=13 format=3 uid="uid://bityts2d47d5y"]
 
 [ext_resource type="Script" uid="uid://bb3n0uu2la31h" path="res://Scripts/Player/MovimentoCameraController/MovimentoCameraController.gd" id="1_3tjji"]
+[ext_resource type="Texture2D" uid="uid://corym3gkqu6ju" path="res://assets/PNG/Emotes/up-right.png" id="2_4jr7t"]
+[ext_resource type="Texture2D" uid="uid://cdhef7snhcysb" path="res://assets/PNG/Emotes/left.png" id="3_bc7uc"]
+[ext_resource type="Texture2D" uid="uid://hotm7b35pem4" path="res://assets/PNG/Emotes/down-right.png" id="4_qgeah"]
+[ext_resource type="Texture2D" uid="uid://d3wcwy1jct6cf" path="res://assets/PNG/Emotes/up.png" id="5_2fx66"]
+[ext_resource type="Texture2D" uid="uid://bv6qu1s7eljns" path="res://assets/PNG/Emotes/down.png" id="6_gqr66"]
+[ext_resource type="Texture2D" uid="uid://na23l4ilnwob" path="res://assets/PNG/Emotes/up-left.png" id="7_lpyi5"]
+[ext_resource type="Texture2D" uid="uid://do7pguew07rsu" path="res://assets/PNG/Emotes/right.png" id="8_3q8iq"]
+[ext_resource type="Texture2D" uid="uid://bx5pbir16bjyq" path="res://assets/PNG/Emotes/down-left.png" id="9_0gc4r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jr7t"]
+bg_color = Color(0, 0, 0, 0.4627451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifnvo"]
+bg_color = Color(0, 0, 0, 0.2)
+
+[sub_resource type="Theme" id="Theme_e5qdl"]
+Button/styles/hover = SubResource("StyleBoxFlat_4jr7t")
+Button/styles/normal = SubResource("StyleBoxFlat_ifnvo")
 
 [node name="MovimentoCamera" type="CanvasLayer"]
 script = ExtResource("1_3tjji")
@@ -12,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_e5qdl")
 theme_override_constants/separation = 0
 
 [node name="Esquerda" type="VBoxContainer" parent="Colunas"]
@@ -19,25 +38,30 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="SuperiorEsquerdo" type="Button" parent="Colunas/Esquerda"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "Superior Esquerdo"
+icon = ExtResource("2_4jr7t")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Esquerdo" type="Button" parent="Colunas/Esquerda"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "Esquerda"
+icon = ExtResource("3_bc7uc")
+icon_alignment = 1
+expand_icon = true
 
 [node name="InferiorEsquerdo" type="Button" parent="Colunas/Esquerda"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "Inferior Esquerdo"
+icon = ExtResource("4_qgeah")
+expand_icon = true
 
 [node name="Centro" type="VBoxContainer" parent="Colunas"]
 layout_mode = 2
@@ -45,12 +69,12 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="Topo" type="Button" parent="Colunas/Centro"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "Topo"
+icon = ExtResource("5_2fx66")
 icon_alignment = 1
 expand_icon = true
 
@@ -60,36 +84,43 @@ size_flags_vertical = 3
 mouse_filter = 1
 
 [node name="Inferior" type="Button" parent="Colunas/Centro"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "Inferior"
+icon = ExtResource("6_gqr66")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Direita" type="VBoxContainer" parent="Colunas"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="SuperiorDireito" type="Button" parent="Colunas/Direita"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "Superior Direito"
+icon = ExtResource("7_lpyi5")
+expand_icon = true
 
 [node name="Direito" type="Button" parent="Colunas/Direita"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "Direita"
+icon = ExtResource("8_3q8iq")
+icon_alignment = 1
+expand_icon = true
 
 [node name="InferiorDireito" type="Button" parent="Colunas/Direita"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/font_size = 16
-text = "Inferior Direito"
+icon = ExtResource("9_0gc4r")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="mouse_entered" from="Colunas/Esquerda/SuperiorEsquerdo" to="." method="_on_superior_esquerdo_mouse_entered"]
 [connection signal="mouse_exited" from="Colunas/Esquerda/SuperiorEsquerdo" to="." method="_mouse_exited_area"]

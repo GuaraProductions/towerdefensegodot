@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://deep0pql2xblx"]
+
+[ext_resource type="Texture2D" uid="uid://cvxeorqhgy2ue" path="res://assets/PNG/Default/banner_classic_curtain.png" id="1_k4oea"]
+
+[node name="Banner" type="TextureRect"]
+custom_minimum_size = Vector2(400, 150)
+texture = ExtResource("1_k4oea")
+expand_mode = 2
+
+[node name="-" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 35

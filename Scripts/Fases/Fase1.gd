@@ -24,6 +24,8 @@ signal fase_acabou(fim_fase_estado: FimFase)
 @export var gerenciador_popups : GerenciadorPopups
 @export var opcoes_de_torres: JanelaOpcoesDeTorres
 @export var cache_torres: CacheTorres
+@export var blast_node : Node2D
+
 
 var vida : float : set = _set_vida
 var carteira: int : set = _set_carteira
@@ -149,3 +151,6 @@ func _inimigo_atingiu_meta(dano: float) -> void:
 	
 func _inimigo_morreu(recompensa: int) -> void:
 	carteira += recompensa
+
+func spawn_blast(blast: Node2D) -> void:
+	blast_node.add_child(blast)
