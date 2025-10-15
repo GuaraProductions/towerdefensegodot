@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bl1gvbjl4f214"]
+[gd_scene load_steps=32 format=4 uid="uid://bl1gvbjl4f214"]
 
 [ext_resource type="Script" uid="uid://bxd2mrcm6j3vi" path="res://Scripts/Fases/Fase1.gd" id="1_8b40t"]
 [ext_resource type="Texture2D" uid="uid://d1rontmhkl71b" path="res://assets/Tilesheet/towerDefense_tilesheet.png" id="2_ps18p"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b1gtolbiywyn4" path="res://Cenas/Torres/AreaSpawn/AreaSpawn.tscn" id="4_44fs7"]
 [ext_resource type="PackedScene" uid="uid://cl2ig7cy70dx5" path="res://Cenas/Caminho/CaminhoInimigos.tscn" id="5_xnubh"]
 [ext_resource type="Script" uid="uid://bw4xnrihu1hva" path="res://Scripts/Caminho/Wave.gd" id="6_nvp7c"]
-[ext_resource type="PackedScene" uid="uid://cmoxf11gi33tb" path="res://Cenas/Inimigo/Efeitos/Explosion.tscn" id="6_ps18p"]
 [ext_resource type="Script" uid="uid://5jckqrk3smvw" path="res://Scripts/Caminho/SpawnInimigo.gd" id="7_pd4yr"]
 [ext_resource type="PackedScene" uid="uid://c64uyuc4x5fv7" path="res://Cenas/UI/GameUI/GameUI.tscn" id="8_8vvm5"]
 [ext_resource type="PackedScene" uid="uid://bityts2d47d5y" path="res://Cenas/Player/MovimentoCameraController/MovimentoCameraController.tscn" id="9_od1vs"]
@@ -576,7 +575,6 @@ size = Vector2(301, 58)
 
 [node name="Fase1" type="Node2D" node_paths=PackedStringArray("camera_player", "caminho_inimigos", "game_ui", "movimento_camera", "gerenciador_popups", "opcoes_de_torres", "cache_torres", "blast_node")]
 script = ExtResource("1_8b40t")
-modo_teste = true
 vida_inicial = 10.0
 dinheiro_inicial = 200
 camera_player = NodePath("CameraPlayer")
@@ -621,7 +619,6 @@ position = Vector2(894, 442)
 [node name="CaminhoInimigos" parent="." node_paths=PackedStringArray("inimigos_cache") instance=ExtResource("5_xnubh")]
 position = Vector2(0, -250)
 curve = SubResource("Curve2D_6y3p2")
-explosao = ExtResource("6_ps18p")
 waves = Array[ExtResource("6_nvp7c")]([SubResource("Resource_e78nn")])
 inimigos_cache = NodePath("../CacheInimigosTerrestres")
 

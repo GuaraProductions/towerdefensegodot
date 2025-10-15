@@ -14,10 +14,10 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	@warning_ignore_start("narrowing_conversion")
-	camera.limit_bottom = limite_inf_dir.global_position.y
-	camera.limit_left = limite_sup_esq.global_position.x
-	camera.limit_right = limite_inf_dir.global_position.x
-	camera.limit_top = limite_sup_esq.global_position.y
+	camera.limit_bottom = limite_inf_dir.global_position.y + global_position.y
+	camera.limit_left = limite_sup_esq.global_position.x + global_position.x
+	camera.limit_right = limite_inf_dir.global_position.x + global_position.x
+	camera.limit_top = limite_sup_esq.global_position.y + global_position.y
 
 func _process(_delta: float) -> void:
 	var dir = controller.mouse_movement_vector

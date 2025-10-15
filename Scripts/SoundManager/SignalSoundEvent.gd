@@ -16,6 +16,6 @@ func _ready() -> void:
 func _parent_ready(parent: Node) -> void:
 	parent.connect(signal_name, _event_happened)
 	
-func _event_happened(...args) -> void:
+func _event_happened(..._args) -> void:
 	SoundManager.play_sound(sound_effect, override_bus)
 	

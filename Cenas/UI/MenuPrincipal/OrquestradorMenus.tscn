@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://080scwrgp2x"]
+[gd_scene load_steps=14 format=4 uid="uid://080scwrgp2x"]
 
 [ext_resource type="PackedScene" uid="uid://dgyo1rxqgbjg7" path="res://Cenas/UI/MenuPrincipal/MenuPrincipal.tscn" id="1_oqgt3"]
 [ext_resource type="Script" uid="uid://dxfs62bwrd75c" path="res://Scripts/UI/MenuPrincipal/OrquestradorDeCenas.gd" id="1_qagpn"]
@@ -6,7 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://bvtvk0r27ojo6" path="res://assets/Music/The Calm Before the Storm.ogg" id="2_it755"]
 [ext_resource type="PackedScene" uid="uid://4kbxlab05p5k" path="res://Cenas/UI/MenuPrincipal/SeletorDeFases.tscn" id="2_xdn5c"]
 [ext_resource type="Script" uid="uid://b5ixsf3s5xxlt" path="res://addons/simple-gui-transitions/transition.gd" id="4_hocvv"]
+[ext_resource type="PackedScene" uid="uid://bl1gvbjl4f214" path="res://Cenas/Fases/FasesDisponiveis/Fase1.tscn" id="5_oj0ho"]
+[ext_resource type="PackedScene" uid="uid://s80qhxv684dw" path="res://Cenas/Fases/FasesDisponiveis/Fase2.tscn" id="6_a8m08"]
 [ext_resource type="PackedScene" uid="uid://w7en1bqi6r3x" path="res://Cenas/UI/MenuPrincipal/Creditos.tscn" id="6_gus5h"]
+[ext_resource type="PackedScene" uid="uid://cvwxh0mba78v5" path="res://Cenas/Fases/FasesDisponiveis/Fase3.tscn" id="7_ip7h3"]
 [ext_resource type="PackedScene" uid="uid://c4pdapkvspkm3" path="res://Cenas/UI/MenuPrincipal/options_menu/master_options_menu_with_tabs.tscn" id="7_ud4of"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gus5h"]
@@ -513,6 +516,7 @@ tile_set = SubResource("TileSet_ud4of")
 
 [node name="SeletorDeFases" parent="." instance=ExtResource("2_xdn5c")]
 visible = false
+fases_possiveis = Array[PackedScene]([ExtResource("5_oj0ho"), ExtResource("6_a8m08"), ExtResource("7_ip7h3")])
 
 [node name="GuiTransition" type="Node" parent="SeletorDeFases"]
 script = ExtResource("4_hocvv")
@@ -525,7 +529,6 @@ layout_id = "SeletorDeFases"
 metadata/_custom_type_script = "uid://b5ixsf3s5xxlt"
 
 [node name="MenuPrincipal" parent="." instance=ExtResource("1_oqgt3")]
-visible = false
 
 [node name="GuiTransition2" type="Node" parent="MenuPrincipal"]
 script = ExtResource("4_hocvv")
